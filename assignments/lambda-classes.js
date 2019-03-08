@@ -8,12 +8,11 @@ class Person {
     this.location = person.location;
     this.age = person.age;
     this.gender = person.gender;
-    this.saying = person.saying;
 
   }
 
-  catchPhrase() {
-    return `My name is ${this.name} my catchphrase is "${this.saying}"`;
+  speak() {
+    return `Hello My name is ${this.name}`;
   }
 }
 
@@ -27,7 +26,7 @@ class Student extends Person {
   }
 
   catchPhrase() {
-    return `My name is ${this.name} my catchphrase is "${this.saying}"`;
+    return `My name is ${this.name} my catchphrase is ${this.saying}`;
   }
 }
 //GrandChild
@@ -126,3 +125,9 @@ class Student extends Person {
   console.log(kevin.catchPhrase());
   console.log(grace.catchPhrase());
 
+  console.log(asa.speak());
+  console.log(john.speak());
+  console.log(josh.speak());
+  console.log(sarah.speak());
+  console.log(kevin.speak());
+  console.log(grace.speak());
