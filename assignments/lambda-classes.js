@@ -1,13 +1,27 @@
 // CODE here for your Lambda Classes
 
 //Parent
-class Student {
+class Person {
+  
+    constructor(person) {
+    this.name = person.name;
+    this.location = person.location;
+    this.age = person.age;
+    this.gender = person.gender;
+    this.saying = person.saying;
+
+  }
+
+  catchPhrase() {
+    return `My name is ${this.name} my catchphrase is "${this.saying}"`;
+  }
+}
+
+//Child
+class Student extends Person {
   
     constructor(learning) {
-    this.name = learning.name;
-    this.location = learning.location;
-    this.age = learning.age;
-    this.gender = learning.gender;
+        super(learning);
     this.saying = learning.saying;
 
   }
@@ -16,13 +30,15 @@ class Student {
     return `My name is ${this.name} my catchphrase is "${this.saying}"`;
   }
 }
-//Child
+//GrandChild
  class Instructor extends Student {
   
     constructor(teacher) {
         super(teacher);        
         this.favLanguage = teacher.favLanguage;
         this.specialty = teacher.specialty;
+        this.breaktime = teacher.breaktime;
+
     }
     
     break() {
@@ -39,10 +55,10 @@ class Student {
     location: 'Bakersfeild, CA',
     age: 31,
     gender: 'male',
-    favLanguage: 'JavaScript',
+    favLanguage: `How to be a Boss at JavaScript`,
     specialty: 'Front-end',
     saying: `wanna play poker? cause i got an Asa up my sleave!`,
-    breaktime: `I'm watching you!! Take a break and walk away from your computer`
+    breaktime: `Im watching you!! Take a break and walk away from your computer`
   });
 
   const john = new Instructor({
@@ -53,7 +69,7 @@ class Student {
     favLanguage: 'JavaScript',
     specialty: 'Full-Stack',
     saying: `Well lets see if this works!`,
-    breaktime:`ok we are at our 30 miniutes so take a break and i'll see you in 5`
+    breaktime:`ok we are at our 30 miniutes so take a break and ill see you in 5`
   });
 
   const josh = new Student({
